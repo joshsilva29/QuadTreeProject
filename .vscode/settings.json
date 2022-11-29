@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "iterator": "c",
+        "__node_handle": "c",
+        "queue": "c"
+    }
+}
