@@ -1,0 +1,53 @@
+INIT_QUADTREE(8): initialized a quadtree of width 256 
+LIST_RECTANGLES(): listing 0 rectangles: 
+CREATE_RECTANGLE(R1,5,5,25,25): created rectangle R1
+CREATE_RECTANGLE(R2,20,20,31,31): created rectangle R2
+CREATE_RECTANGLE(R3,30,30,40,40): created rectangle R3
+CREATE_RECTANGLE(R4,200,200,210,210): created rectangle R4
+TRACE ON
+INSERT(R4): inserted rectangle R4
+SEARCH_POINT(1,1)[ 0]: no rectangle found
+INSERT(R1): inserted rectangle R1
+INSERT(R4): failed: intersects with R4
+INSERT(R2): failed: intersects with R1
+SEARCH_POINT(1,1)[ 0 3]: no rectangle found
+INSERT(R3): inserted rectangle R3
+SEARCH_POINT(5,5)[ 0 3 15 63 255]: found rectangle R1
+TRACE OFF
+LIST_RECTANGLES(): listing 4 rectangles: 
+R1 5 5 25 25
+R2 20 20 31 31
+R3 30 30 40 40
+R4 200 200 210 210
+RECTANGLE_SEARCH(R2): found 2 rectangles: R1 R3
+SEARCH_POINT(1,1): no rectangle found
+INSERT(R2): failed: intersects with R1
+SEARCH_POINT(7,7): found rectangle R1
+INSERT(R2): failed: intersects with R1
+DELETE_POINT(10,10): deleted rectangle R1
+INSERT(R2): failed: intersects with R3
+INIT_QUADTREE(8): initialized a quadtree of width 256 
+INSERT(R4): inserted rectangle R4
+INSERT(R4): failed: intersects with R4
+CREATE_RECTANGLE(S1,5,5,10,10): created rectangle S1
+CREATE_RECTANGLE(S2,10,10,13,13): created rectangle S2
+CREATE_RECTANGLE(S3,14,14,20,20): created rectangle S3
+CREATE_RECTANGLE(S4,13,2,14,24): created rectangle S4
+INSERT(S1): inserted rectangle S1
+INSERT(S3): inserted rectangle S3
+TOUCH(S2): found 1 rectangles: S1 
+TRACE ON
+HORIZ_NEIGHBOR(R2)[ 0 1 3 13 15 61 63 254]: found rectangle S3
+TRACE OFF
+VERT_NEIGHBOR(R4): found rectangle S3
+INSERT(R3): inserted rectangle R3
+VERT_NEIGHBOR(R4): found rectangle R3
+INSERT(R4): failed: intersects with R4
+INSERT(R4): failed: intersects with R4
+INSERT(R4): failed: intersects with R4
+NEAREST_RECTANGLE(27,26): found rectangle R3
+NEAREST_RECTANGLE(50,50): found rectangle R3
+NEAREST_RECTANGLE(130,130): found rectangle R4
+NEAREST_RECTANGLE(160,160): found rectangle R4
+INSERT(S2): inserted rectangle S2
+INSERT(S4): inserted rectangle S4
